@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: casa-do-codigo-deveficiente
+
+  jpa:
+    open-in-view: false
+
+  profiles:
+    active: ${APP_PROFILE:test}
