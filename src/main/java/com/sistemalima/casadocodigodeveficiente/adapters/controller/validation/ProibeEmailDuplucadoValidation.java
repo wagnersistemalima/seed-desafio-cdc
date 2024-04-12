@@ -30,7 +30,7 @@ public class ProibeEmailDuplucadoValidation implements Validator {
         AuthorRequest authorRequest = (AuthorRequest) target;
 
         if (authorRepository.findByEmail(authorRequest.getEmail()).isPresent()) {
-            errors.rejectValue("name", "400",
+            errors.rejectValue("email", "400",
                     "Já existe esse email em nosso cadastro " + authorRequest.getEmail());
         }
 

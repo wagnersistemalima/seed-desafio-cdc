@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -27,21 +28,28 @@ public class AuthorEntity {
 
     private LocalDateTime createAt;
 
+    private LocalDateTime updateAt;
+
     public AuthorEntity() {
     }
 
-    public AuthorEntity(Long id, String name, String email, String description, LocalDateTime createAt) {
+    public AuthorEntity(Long id, String name, String email, String description, LocalDateTime createAt, LocalDateTime updateAt) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.description = description;
         this.createAt = createAt;
+        this.updateAt = updateAt;
     }
 
     public AuthorEntity(String name, String email, String description) {
         this.name = name;
         this.email = email;
         this.description = description;
+    }
+
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
     }
 
     public Long getId() {
@@ -98,13 +106,19 @@ public class AuthorEntity {
         createAt = LocalDateTime.now();
     }
 
+    @PreUpdate
+    public  void updatePersiste() {
+        updateAt = LocalDateTime.now();
+    }
+
     public Author toDomain() {
         return new Author(
-             this.getId(),
-             this.getName(),
-             this.getEmail(),
-             this.getDescription(),
-             this.getCreateAt()
+             id = this.getId(),
+             name = this.getName(),
+             email = this.getEmail(),
+             description = this.getDescription(),
+             createAt = this.getCreateAt(),
+             updateAt = this.getUpdateAt()
         );
     }
 }
