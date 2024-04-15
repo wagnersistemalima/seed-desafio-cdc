@@ -1,5 +1,6 @@
 package com.sistemalima.casadocodigodeveficiente.adapters.controller.advice;
 
+import com.sistemalima.casadocodigodeveficiente.adapters.controller.ResourceNotFoundException;
 import com.sistemalima.casadocodigodeveficiente.adapters.controller.advice.entity.ValidationErrorsOutputResponse;
 import com.sistemalima.casadocodigodeveficiente.adapters.controller.entity.DefaultResponse;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,6 +23,22 @@ public class ResourceExceptionHandler {
 
     @Autowired
     private MessageSource messageSource;
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public DefaultResponse<ValidationErrorsOutputResponse> handlerValidationError(
+            ResourceNotFoundException exception, HttpServletRequest httpServletRequest) {
+
+        ValidationErrorsOutputResponse validationErrorsOutputResponse = new ValidationErrorsOutputResponse(
+                LocalDateTime.now(),
+                HttpStatus.NOT_FOUND.value(),
+                HttpStatus.NOT_FOUND.name(),
+                exception.getMessage(),
+                httpServletRequest.getRequestURI()
+        );
+
+        return new DefaultResponse<>(validationErrorsOutputResponse);
+    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)

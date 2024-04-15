@@ -3,7 +3,7 @@ package com.sistemalima.casadocodigodeveficiente.adapters.controller.category;
 import com.sistemalima.casadocodigodeveficiente.adapters.controller.category.entity.CategoryRequest;
 import com.sistemalima.casadocodigodeveficiente.adapters.controller.category.entity.CategoryResponse;
 import com.sistemalima.casadocodigodeveficiente.adapters.controller.entity.DefaultResponse;
-import com.sistemalima.casadocodigodeveficiente.application.ports.input.CategoryService;
+import com.sistemalima.casadocodigodeveficiente.domain.ports.input.CategoryService;
 import com.sistemalima.casadocodigodeveficiente.domain.Category;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

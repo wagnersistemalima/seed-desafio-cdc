@@ -1,14 +1,7 @@
 package com.sistemalima.casadocodigodeveficiente.repository.author.entity;
 
 import com.sistemalima.casadocodigodeveficiente.domain.Author;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
-
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -20,14 +13,19 @@ public class AuthorEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "email")
     private String email;
 
+    @Column(name = "description")
     private String description;
 
+    @Column(name = "crete_at")
     private LocalDateTime createAt;
 
+    @Column(name = "update_at")
     private LocalDateTime updateAt;
 
     public AuthorEntity() {

@@ -18,10 +18,12 @@ public class CategoryEntity implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "createAt")
+    @Column(name = "create_at")
     private LocalDateTime createAt;
 
+    @Column(name = "update_at")
     private LocalDateTime updateAt;
+
 
     public CategoryEntity() {
     }
