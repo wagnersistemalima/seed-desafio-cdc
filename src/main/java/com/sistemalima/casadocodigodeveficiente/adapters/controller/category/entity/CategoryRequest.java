@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class CategoryRequest implements Serializable {
 
     @NotBlank
-    @UniqueValue(domainClass = CategoryEntity.class, fieldName = "name")
+    @UniqueValue(domainClass = CategoryEntity.class, fieldName = "name", message = "Validação nome da Categoria deve ser unico")
     private String name;
 
     public CategoryRequest() {

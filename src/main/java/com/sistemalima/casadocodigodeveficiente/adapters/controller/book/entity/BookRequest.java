@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class BookRequest {
 
     @NotBlank
-    @UniqueValue(domainClass = BookEntity.class, fieldName = "title")
+    @UniqueValue(domainClass = BookEntity.class, fieldName = "title", message = "Validação titulo do livro deve ser unico")
     private String title;
 
     @NotBlank
@@ -34,7 +34,7 @@ public class BookRequest {
     private Integer page;
 
     @NotBlank
-    @UniqueValue(domainClass = BookEntity.class, fieldName = "isbn")
+    @UniqueValue(domainClass = BookEntity.class, fieldName = "isbn", message = "Validação identificador isbn do livro deve ser unico")
     private String isbn;
 
     @Future
