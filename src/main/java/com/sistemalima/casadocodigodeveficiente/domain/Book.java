@@ -65,6 +65,21 @@ public class Book {
         this.author = author;
     }
 
+    public Book(BookEntity bookEntity) {
+        this.id = bookEntity.getId();
+        this.title = bookEntity.getTitle();
+        this.summedUp = bookEntity.getSummedUp();
+        this.summary = bookEntity.getSummary();
+        this.price = bookEntity.getPrice();
+        this.page = bookEntity.getPage();
+        this.isbn = bookEntity.getIsbn();
+        this.publicationDate = bookEntity.getPublicationDate();
+        this.category = bookEntity.getCategory().toDomain();
+        this.author = bookEntity.getAuthor().toDomain();
+        this.createAt = bookEntity.getCreatAt();
+        this.updateAt = bookEntity.getUpdateAt();
+    }
+
     public Long getId() {
         return id;
     }

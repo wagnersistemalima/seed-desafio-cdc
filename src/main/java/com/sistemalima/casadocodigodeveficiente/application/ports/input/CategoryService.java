@@ -1,4 +1,4 @@
-package com.sistemalima.casadocodigodeveficiente.domain.ports.input;
+package com.sistemalima.casadocodigodeveficiente.application.ports.input;
 
 import com.sistemalima.casadocodigodeveficiente.domain.Category;
 

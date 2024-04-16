@@ -1,8 +1,10 @@
 package com.sistemalima.casadocodigodeveficiente.adapters.controller.book.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sistemalima.casadocodigodeveficiente.adapters.controller.author.entity.AuthorResponse;
 import com.sistemalima.casadocodigodeveficiente.adapters.controller.category.entity.CategoryResponse;
 import com.sistemalima.casadocodigodeveficiente.domain.Author;
+import com.sistemalima.casadocodigodeveficiente.domain.Book;
 import com.sistemalima.casadocodigodeveficiente.domain.Category;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -24,6 +26,7 @@ public class BookResponse {
 
     private String isbn;
 
+    @JsonFormat(pattern = "dd/MM/yyyy", shape = JsonFormat.Shape.STRING)
     private LocalDate publicationDate;
 
     private CategoryResponse categoryResponse;
@@ -51,6 +54,21 @@ public class BookResponse {
         this.authorResponse = author.toResponse();
         this.createAt = createAt;
         this.updateAt = updateAt;
+    }
+
+    public BookResponse(Book book) {
+        this.id = book.getId();
+        this.title = book.getTitle();
+        this.summedUp = book.getSummedUp();
+        this.summary = book.getSummary();
+        this.price = book.getPrice();
+        this.page = book.getPage();
+        this.isbn = book.getIsbn();
+        this.publicationDate = book.getPublicationDate();
+        this.categoryResponse = book.getCategory().toResponse();
+        this.authorResponse = book.getAuthor().toResponse();
+        this.createAt = book.getCreateAt();
+        this.updateAt = book.getUpdateAt();
     }
 
     public Long getId() {

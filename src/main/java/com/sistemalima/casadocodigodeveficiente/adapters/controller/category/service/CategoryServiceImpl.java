@@ -1,6 +1,6 @@
 package com.sistemalima.casadocodigodeveficiente.adapters.controller.category.service;
 
-import com.sistemalima.casadocodigodeveficiente.domain.ports.input.CategoryService;
+import com.sistemalima.casadocodigodeveficiente.application.ports.input.CategoryService;
 import com.sistemalima.casadocodigodeveficiente.domain.Category;
 import com.sistemalima.casadocodigodeveficiente.repository.category.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;

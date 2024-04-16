@@ -14,7 +14,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -25,8 +24,8 @@ public class ResourceExceptionHandler {
     private MessageSource messageSource;
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public DefaultResponse<ValidationErrorsOutputResponse> handlerValidationError(
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public DefaultResponse<ValidationErrorsOutputResponse> handlerResourceNotFoundException(
             ResourceNotFoundException exception, HttpServletRequest httpServletRequest) {
 
         ValidationErrorsOutputResponse validationErrorsOutputResponse = new ValidationErrorsOutputResponse(

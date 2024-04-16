@@ -3,7 +3,7 @@ package com.sistemalima.casadocodigodeveficiente.adapters.controller.author;
 import com.sistemalima.casadocodigodeveficiente.adapters.controller.author.entity.AuthorRequest;
 import com.sistemalima.casadocodigodeveficiente.adapters.controller.entity.DefaultResponse;
 import com.sistemalima.casadocodigodeveficiente.adapters.controller.validation.ProibeEmailDuplucadoValidation;
-import com.sistemalima.casadocodigodeveficiente.domain.ports.input.AuthorService;
+import com.sistemalima.casadocodigodeveficiente.application.ports.input.AuthorService;
 import com.sistemalima.casadocodigodeveficiente.domain.Author;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
