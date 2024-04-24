@@ -17,7 +17,6 @@ public class Country {
         this.id = id;
         this.name = name;
     }
-
     public Country(String name) {
         this.name = name;
     }
@@ -40,7 +39,6 @@ public class Country {
 
     public CountryEntity toEntity() {
         return new CountryEntity(
-                id = this.getId(),
                 name = this.getName()
         );
     }

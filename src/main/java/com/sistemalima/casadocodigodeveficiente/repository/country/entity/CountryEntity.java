@@ -1,8 +1,12 @@
 package com.sistemalima.casadocodigodeveficiente.repository.country.entity;
 
 import com.sistemalima.casadocodigodeveficiente.domain.Country;
-import jakarta.persistence.*;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
 import java.util.Objects;
 
 @Entity
@@ -22,6 +26,10 @@ public class CountryEntity {
 
     public CountryEntity(Long id, String name) {
         this.id = id;
+        this.name = name;
+    }
+
+    public CountryEntity(String name) {
         this.name = name;
     }
 

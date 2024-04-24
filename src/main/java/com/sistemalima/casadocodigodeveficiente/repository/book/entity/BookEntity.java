@@ -3,8 +3,16 @@ package com.sistemalima.casadocodigodeveficiente.repository.book.entity;
 import com.sistemalima.casadocodigodeveficiente.domain.Book;
 import com.sistemalima.casadocodigodeveficiente.repository.author.entity.AuthorEntity;
 import com.sistemalima.casadocodigodeveficiente.repository.category.entity.CategoryEntity;
-import jakarta.persistence.*;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;

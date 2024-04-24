@@ -1,4 +1,4 @@
-package com.sistemalima.casadocodigodeveficiente.adapters.controller;
+package com.sistemalima.casadocodigodeveficiente.adapters.controller.exceptions;
 
 import java.io.Serializable;
 

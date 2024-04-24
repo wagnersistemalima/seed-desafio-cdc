@@ -7,3 +7,5 @@ INSERT INTO tb_category (name, create_at) VALUES ('Ficção Científica', '2024-
 INSERT INTO tb_category (name, create_at) VALUES ('Contos', '2024-04-15 12:17:40.82');
 INSERT INTO tb_category (name, create_at) VALUES ('Folclore', '2024-04-15 12:17:40.82');
 INSERT INTO tb_category (name, create_at) VALUES ('Biografias', '2024-04-15 12:17:40.82');
+
+INSERT INTO tb_country (name) VALUES ('Portugal');

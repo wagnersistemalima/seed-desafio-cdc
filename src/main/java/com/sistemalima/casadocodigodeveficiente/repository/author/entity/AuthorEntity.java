@@ -1,7 +1,14 @@
 package com.sistemalima.casadocodigodeveficiente.repository.author.entity;
 
 import com.sistemalima.casadocodigodeveficiente.domain.Author;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
